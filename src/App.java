@@ -8,12 +8,12 @@ import dijkstra.Nodo;
 public class App {
 
     public static void main(final String[] args) throws Exception {
-        Nodo nodeA = new Nodo("A");
-        Nodo nodeB = new Nodo("B");
-        Nodo nodeC = new Nodo("C");
-        Nodo nodeD = new Nodo("D");
-        Nodo nodeE = new Nodo("E");
-        Nodo nodeF = new Nodo("F");
+        final Nodo nodeA = new Nodo("A");
+        final Nodo nodeB = new Nodo("B");
+        final Nodo nodeC = new Nodo("C");
+        final Nodo nodeD = new Nodo("D");
+        final Nodo nodeE = new Nodo("E");
+        final Nodo nodeF = new Nodo("F");
 
         nodeA.addDestination(nodeB, 10);
         nodeA.addDestination(nodeC, 15);
@@ -39,13 +39,14 @@ public class App {
 
         graph = Dijkstra.calcPathGraph(graph, nodeA);
 
-        List<Nodo> shortestPathForNodeB = Arrays.asList(nodeA);
-        List<Nodo> shortestPathForNodeC = Arrays.asList(nodeA);
-        List<Nodo> shortestPathForNodeD = Arrays.asList(nodeA, nodeB);
-        List<Nodo> shortestPathForNodeE = Arrays.asList(nodeA, nodeB, nodeD);
-        List<Nodo> shortestPathForNodeF = Arrays.asList(nodeA, nodeB, nodeD);
+        final List<Nodo> shortestPathForNodeB = Arrays.asList(nodeA);
+        final List<Nodo> shortestPathForNodeC = Arrays.asList(nodeA);
+        final List<Nodo> shortestPathForNodeD = Arrays.asList(nodeA, nodeB);
+        final List<Nodo> shortestPathForNodeE = Arrays.asList(nodeA, nodeB, nodeD);
+        final List<Nodo> shortestPathForNodeF = Arrays.asList(nodeA, nodeB, nodeD);
 
-        for (Nodo node : graph.getNodes()) {
+        // FIXME:
+        for (final Nodo node : graph.getNodes()) {
             switch (node.getName()) {
             case "B":
                 if (node.getShortestPath().equals(shortestPathForNodeB)) {
